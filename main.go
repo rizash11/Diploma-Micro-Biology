@@ -3,7 +3,6 @@ package main
 
 import (
 	"diploma/backend"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -21,16 +20,24 @@ func main() {
 
 	app.ParseTemplates("frontend")
 
-	log.Print("starting server...")
-	http.HandleFunc("/", handler)
+	// Determine port for HTTP service.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		app.Info_log.Printf("defaulting to port %s", port)
+	}
 
 	srv := &http.Server{
-		Addr:    "localhost:" + "8080",
+		Addr:    ":" + port,
 		Handler: app.Routes(),
 	}
 
 	app.Info_log.Println("Starting a server at http://localhost:" + "8080" + "/")
 	app.Error_log.Fatalln(srv.ListenAndServe())
+
+	// log.Print("starting server...")
+	// http.HandleFunc("/", handler)
+
 	// // Determine port for HTTP service.
 	// port := os.Getenv("PORT")
 	// if port == "" {
@@ -45,10 +52,10 @@ func main() {
 	// }
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	name := os.Getenv("NAME")
-	if name == "" {
-		name = "World"
-	}
-	fmt.Fprintf(w, "Hello %s!\n", name)
-}
+// func handler(w http.ResponseWriter, r *http.Request) {
+// 	name := os.Getenv("NAME")
+// 	if name == "" {
+// 		name = "World"
+// 	}
+// 	fmt.Fprintf(w, "Hello %s!\n", name)
+// }
