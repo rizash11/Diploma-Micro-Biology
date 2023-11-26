@@ -8,22 +8,50 @@ import (
 	"runtime/debug"
 )
 
-func (app *Application) ParseTemplates(dir string) {
-	templateCache := map[string]*template.Template{}
-	var err error
+// Parsing HTML templates and storing them in a cache to be executed later
+func (app *Application) ParseTemplates(dir string) (map[string]*template.Template, error) {
+	// templateCache := map[string]*template.Template{}
+	// var err error
 
-	templateCache["base.layout"], err = template.ParseFiles(filepath.Join(dir, "base.layout.html"))
+	// templateCache["base.layout"], err = template.ParseFiles(filepath.Join(dir, "base.layout.html"))
+	// if err != nil {
+	// 	app.Error_log.Println("Error parsing base.layout: " + err.Error())
+	// }
+
+	// app.templateCache = templateCache
+	templateCache := map[string]*template.Template{}
+	pages, err := filepath.Glob(filepath.Join(dir, "*.page.html"))
 	if err != nil {
-		app.Error_log.Println("Error parsing base.layout: " + err.Error())
+		return nil, err
 	}
 
-	app.templateCache = templateCache
+	for _, page := range pages {
+		ts, err := template.ParseFiles(page)
+		if err != nil {
+			return nil, err
+		}
+
+		ts, err = ts.ParseGlob(filepath.Join(dir, "*layout.html"))
+		if err != nil {
+			return nil, err
+		}
+
+		ts, err = ts.ParseGlob(filepath.Join(dir, "*partial.html"))
+		if err != nil {
+			return nil, err
+		}
+
+		name := filepath.Base(page)
+		templateCache[name] = ts
+	}
+
+	return templateCache, nil
 }
 
 // This function finds an html template in cache and executes it.
 // Enter filename without the html extension as in "base.layout.html" to just "base.layout"
 func (app *Application) Render(w http.ResponseWriter, r *http.Request, name string, td *TemplateData) {
-	tmpl, ok := app.templateCache[name]
+	tmpl, ok := app.TemplateCache[name]
 	if !ok {
 		app.ServerError(w, fmt.Errorf("the %s page doesn't exist", name))
 		return

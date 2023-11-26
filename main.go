@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 func main() {
@@ -18,7 +19,12 @@ func main() {
 		Error_log: errorLog,
 	}
 
-	app.ParseTemplates("frontend")
+	// Parsing HTML templates and storing them in a cache to be executed later
+	var err error
+	app.TemplateCache, err = app.ParseTemplates(filepath.Join("frontend", "html"))
+	if err != nil {
+		app.Error_log.Println("Error parsing html templates: " + err.Error())
+	}
 
 	// Determine port for HTTP service.
 	port := os.Getenv("PORT")

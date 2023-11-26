@@ -6,6 +6,7 @@ import "net/http"
 func (app *Application) Routes() *http.ServeMux {
 	router := http.NewServeMux()
 	router.HandleFunc("/", app.Home)
+	router.Handle("/frontend", http.StripPrefix("/frontend", http.FileServer(http.Dir("./frontend/"))))
 
 	return router
 }
@@ -21,5 +22,5 @@ func (app *Application) Home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	app.Render(w, r, "base.layout", nil)
+	app.Render(w, r, "home.page.html", nil)
 }
