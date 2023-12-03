@@ -1,0 +1,28 @@
+.cltn-body {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #e1e1e1;
+  align-items: center;
+}
+
+.cltn-image {
+  margin: 0;
+  width: 100%;
+}
+
+.cltn-block {
+  top: 75vh;
+  /* position: fixed; */
+  /* background-color: #f1f1f1; */
+  width: 90vw;
+  border-radius: 5vh;
+  padding: 2vh;
+  margin: 3vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.cltn-button {
+}

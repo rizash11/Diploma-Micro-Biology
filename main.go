@@ -38,7 +38,7 @@ func main() {
 		Handler: app.Routes(),
 	}
 
-	app.Info_log.Println("Starting a server at http://localhost:" + "8080" + "/")
+	app.Info_log.Println("Starting a server at http://localhost:" + port)
 	app.Error_log.Fatalln(srv.ListenAndServe())
 
 	// log.Print("starting server...")

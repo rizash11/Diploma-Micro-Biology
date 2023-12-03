@@ -1,0 +1,120 @@
+{{template "base" .}} {{define "body"}}
+<div class="tests-body">
+  <div class="tests-block">
+    <div class="tests-block-text">
+      <h3>Test 1</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+
+    <img
+      src="/frontend/html/scientist.jpg"
+      alt="Girl in a jacket"
+      class="tests-block-image"
+    />
+  </div>
+
+  <div class="tests-block">
+    <div class="tests-block-text">
+      <h3>Test 2</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+
+    <img
+      src="/frontend/html/scientist.jpg"
+      alt="Girl in a jacket"
+      class="tests-block-image"
+    />
+  </div>
+
+  <div class="tests-block">
+    <div class="tests-block-text">
+      <h3>Test 3</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+
+    <img
+      src="/frontend/html/scientist.jpg"
+      alt="Girl in a jacket"
+      class="tests-block-image"
+    />
+  </div>
+
+  <form class="tests-quizz">
+    <fieldset
+      id="q1"
+      style="
+        background-color: #02050f;
+        background-image: url(https://i.imgur.com/FvVxt2D.png);
+      "
+    >
+      <legend>
+        Who was the first man<br />
+        in space?
+      </legend>
+      <div>
+        <input type="radio" name="q1" id="q1a" />
+        <label for="q1a">Baron Munchausen</label>
+        <input type="radio" name="q1" id="q1b" />
+        <label for="q1b">Neil Armstrong</label>
+        <input type="radio" name="q1" id="q1c" />
+        <label for="q1c">Alan Shepard</label>
+        <input type="radio" name="q1" id="q1d" />
+        <label for="q1d">Yuri Gagarin</label>
+        <section>
+          <div class="message correct">
+            <img src="https://i.imgur.com/H9NVua3.jpg" />
+            <p>This is right!</p>
+            <p>
+              Yuri Alekseyevich Gagarin  was a Soviet Air Forces pilot and
+              cosmonaut who became the first human to journey into outer space;
+              his capsule, Vostok 1, completed one orbit of Earth on 12 April
+              1961.
+            </p>
+          </div>
+          <p class="message incorrect">This is incorrect!</p>
+          <p class="message incorrect_a">
+            <img src="https://i.imgur.com/VFpGLPs.png" />
+            Baron Munchausen
+            <a
+              href="http://онлайн-читать.рф/распе-мюнхаузен-первое-путешествие-на-луну/"
+              target="_blank"
+              >went</a
+            >
+            straight to the Moon!
+          </p>
+          <p class="message incorrect_c">
+            Alan Shepard was first man in space from USA.
+          </p>
+        </section>
+        <p class="button-next">
+          <a class="button" href="#q2">Next question</a>
+        </p>
+      </div>
+    </fieldset>
+  </form>
+</div>
+{{end}}
