@@ -1,0 +1,73 @@
+.tests-quizz {
+  background-color: transparent;
+  margin: 5vh;
+  width: 50vw;
+  height: 50vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.tests-quizz-fieldset {
+  height: 90%;
+  border-radius: 1vh;
+  color: white;
+  background-color: #001233;
+  background-image: url(https://i.imgur.com/FvVxt2D.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#q1 .correct img {
+  width: 10%;
+  height: 10%;
+}
+
+#q1 .incorrect_a img {
+  width: 10%;
+  height: 10%;
+}
+
+.tests-quizz-fieldset .fs-questionnaire {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+#questions {
+  height: 65%;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+
+#questions legend {
+  font-size: 150%;
+}
+
+#answers {
+  height: 35%;
+}
+
+.message,
+.button-next {
+  display: none;
+}
+
+/* #q1d:checked ~ section .incorrect {
+  display: none;
+} */
+/* #q1a:checked  */
+:is(#q1a:checked, .incorrect_a) {
+  display: inline-block;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}

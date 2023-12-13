@@ -63,37 +63,58 @@
     />
   </div>
 
-  <form>
-    <fieldset id="q1">
-      <!-- style=" background-color: #02050f; background-image:
-      url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
-      background-size: cover; background-size: 60%; " -->
-      <!-- https://i.imgur.com/FvVxt2D.png -->
-      <legend>
-        Who was the first man<br />
-        in space?
-      </legend>
-      <div>
-        <input type="radio" name="q1" id="q1a" />
-        <label for="q1a">Baron Munchausen</label>
-        <input type="radio" name="q1" id="q1b" />
-        <label for="q1b">Neil Armstrong</label>
-        <input type="radio" name="q1" id="q1c" />
-        <label for="q1c">Alan Shepard</label>
-        <input type="radio" name="q1" id="q1d" />
-        <label for="q1d">Yuri Gagarin</label>
-        <section>
-          <div class="message correct">
-            <img src="https://i.imgur.com/H9NVua3.jpg" />
-            <p>This is right!</p>
-            <p>
-              Yuri Alekseyevich Gagarin  was a Soviet Air Forces pilot and
-              cosmonaut who became the first human to journey into outer space;
-              his capsule, Vostok 1, completed one orbit of Earth on 12 April
-              1961.
-            </p>
+  <form class="tests-quizz">
+    <!-- <fieldset -->
+    <div
+      id="q1"
+      class="tests-quizz-fieldset"
+      style="background-color: linear-gradient(to bottom, #090909, #101010)"
+    >
+      <div class="fs-questionnaire">
+        <section id="questions">
+          <legend>
+            Who was the first man<br />
+            in space?
+          </legend>
+
+          <!-- This is just to get the radio buttons clustered in one block -->
+          <div class="flex-column">
+            <!-- These div-s are necessary, because without them the radio buttons look weird -->
+            <div> 
+              <input type="radio" name="q1" id="q1a" />
+              <label for="q1a">Baron Munchausen</label>
+            </div>
+            <div>
+              <input type="radio" name="q1" id="q1b" />
+              <label for="q1b">Neil Armstrong</label>
+            </div>
+            <div>
+              <input type="radio" name="q1" id="q1c" />
+              <label for="q1c">Alan Shepard</label>
+            </div>
+            <div>
+              <input type="radio" name="q1" id="q1d" />
+              <label for="q1d">Yuri Gagarin</label>
+            </div>
           </div>
-          <p class="message incorrect">This is incorrect!</p>
+        </section>
+
+        <section id="answers">
+          <div class="message correct">
+            <div>
+              <p>This is right!</p>
+              <p>
+                Yuri Alekseyevich Gagarin  was a Soviet Air Forces pilot and
+                cosmonaut who became the first human to journey into outer space;
+                his capsule, Vostok 1, completed one orbit of Earth on 12 April
+                1961.
+              </p>
+            </div>
+
+
+            <img src="https://i.imgur.com/H9NVua3.jpg" />
+          </div>
+
           <p class="message incorrect_a">
             <img src="https://i.imgur.com/VFpGLPs.png" />
             Baron Munchausen
@@ -104,27 +125,27 @@
             >
             straight to the Moon!
           </p>
+
+          <p class="message incorrect_b">This is incorrect!</p>
+          
           <p class="message incorrect_c">
             Alan Shepard was first man in space from USA.
           </p>
         </section>
-        <!-- <p class="button-next">
+      </div>
+
+      <!-- <p class="button-next">
           <a class="button" href="#q2">Next question</a>
         </p> -->
+    
+    </form>    
+    <!-- </fieldset> -->
 
-        <p class="button-next">
-          <span class="congrats">
-            Congratulations, you have finished the quiz!
-          </span>
-        </p>
-      </div>
-    </fieldset>
-
-    <!-- <p class="button-next">
+    <p class="button-next">
       <span class="congrats">
         Congratulations, you have finished the quiz!
       </span>
-    </p> -->
+    </p>
   </form>
 </div>
 {{end}}

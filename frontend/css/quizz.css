@@ -1,0 +1,131 @@
+.congrats {
+  font-weight: bold;
+  font-size: 110%;
+  color: orange;
+}
+
+fieldset {
+  width: 40vw;
+  min-width: 300px;
+  height: 70vh;
+  min-height: 550px;
+  color: white;
+  background-color: #001233;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+
+  padding-bottom: 150px;
+
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 85px;
+  counter-increment: question;
+}
+
+#q1 {
+  background-color: #02050f;
+  background-image: url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+  background-size: 100% 60%;
+}
+
+fieldset legend {
+  position: absolute;
+  top: 10px;
+  font-size: 150%;
+}
+fieldset > div {
+  margin-top: 100px;
+}
+fieldset input:checked + label {
+  border-bottom: 2px solid #fddc9b;
+}
+fieldset label::after {
+  content: "\000A";
+  white-space: pre;
+  line-height: 2;
+}
+fieldset section {
+  position: absolute;
+  /* top: 365px; */
+  /* position: relative; */
+  top: 60%;
+  width: calc(100% - 20px);
+}
+
+.message img {
+  float: right;
+  width: 150px;
+  margin: 0 10px;
+  border-radius: 5px;
+  margin-top: -45px;
+}
+.message a {
+  color: white;
+}
+.correct img {
+  margin-top: 0;
+}
+.correct p:first-of-type {
+  font-size: 110%;
+  color: greenyellow;
+  font-weight: bold;
+}
+.incorrect {
+  font-size: 110%;
+  color: orangered;
+  font-weight: bold;
+}
+
+fieldset .button-next {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+a.button {
+  color: white;
+  background-color: #001845;
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+a.button:hover {
+  background-color: #002855;
+}
+
+.message,
+.button-next {
+  display: none;
+}
+input:checked ~ section .incorrect {
+  display: block;
+}
+
+/* fieldset {
+  display: none;
+} */
+
+fieldset:target {
+  display: block;
+}
+fieldset:target ~ section#start {
+  display: none;
+}
+
+/* Question 1 correct/incorrect answer rules */
+#q1d:checked ~ section .incorrect {
+  display: none;
+}
+#q1a:checked ~ section .incorrect_a,
+#q1c:checked ~ section .incorrect_c,
+#q1d:checked ~ section .correct,
+#q1d:checked ~ .button-next {
+  display: block;
+}

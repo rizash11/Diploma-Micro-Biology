@@ -1,13 +1,15 @@
 @import "tests.css";
 @import "cultivation.css";
+@import "quizz.css";
 
 .header {
   position: sticky;
-  width: 100%;
-  background: linear-gradient(to bottom, #333, #444);
+  width: calc(100% - 10vw);
+  background: linear-gradient(to bottom, #080808, #090909);
   top: 0;
   margin: 0;
-  padding-left: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   color: #eee;
   font-weight: bold;
 
@@ -17,11 +19,12 @@
 }
 
 .footer {
-  width: 100%;
-  background: linear-gradient(to bottom, #444, #555);
+  width: 90%;
+  background: linear-gradient(to bottom, #090909, #101010);
   top: 0;
   margin: 0;
-  padding-left: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   color: #eee;
   font-weight: bold;
 
