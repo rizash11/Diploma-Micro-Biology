@@ -14,22 +14,27 @@ fieldset {
   background-repeat: no-repeat;
   background-size: contain;
   border: none;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   position: relative;
   padding: 20px;
 
   padding-bottom: 150px;
 
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 85px;
+  /* margin-bottom: 85px; */
   counter-increment: question;
 }
 
-#q1 {
+#q1,
+#q2,
+#q3,
+#q4,
+#q5 {
   background-color: #02050f;
-  background-image: url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+  /* background-image: url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg); */
+  background-image: url("magicpattern-blob-composition-1703703699022(1).jpg");
   background-size: 100% 60%;
 }
 
@@ -39,7 +44,7 @@ fieldset legend {
   font-size: 150%;
 }
 fieldset > div {
-  margin-top: 100px;
+  margin-top: 230px;
 }
 fieldset input:checked + label {
   border-bottom: 2px solid #fddc9b;
@@ -120,12 +125,51 @@ fieldset:target ~ section#start {
 }
 
 /* Question 1 correct/incorrect answer rules */
-#q1d:checked ~ section .incorrect {
+#q1a:checked ~ section .incorrect {
   display: none;
 }
-#q1a:checked ~ section .incorrect_a,
-#q1c:checked ~ section .incorrect_c,
-#q1d:checked ~ section .correct,
-#q1d:checked ~ .button-next {
+#q1d:checked ~ section .incorrect_a,
+#q1c:checked ~ section .incorrect_a,
+#q1b:checked ~ section .incorrect_a,
+#q1a:checked ~ section .correct {
+  display: block;
+}
+
+/* Question 2 correct/incorrect answer rules */
+#q2a:checked ~ section .incorrect {
+  display: none;
+}
+#q2b:checked ~ section .incorrect_a,
+#q2a:checked ~ section .correct {
+  display: block;
+}
+
+/* Question 3 correct/incorrect answer rules */
+#q3a:checked ~ section .incorrect {
+  display: none;
+}
+#q3b:checked ~ section .incorrect_a,
+#q3a:checked ~ section .correct {
+  display: block;
+}
+
+/* Question 4 correct/incorrect answer rules */
+#q4a:checked ~ section .incorrect {
+  display: none;
+}
+#q4b:checked ~ section .incorrect_a,
+#q4a:checked ~ section .correct {
+  display: block;
+}
+
+/* Question 5 correct/incorrect answer rules */
+#q5c:checked ~ section .incorrect {
+  display: none;
+}
+#q5e:checked ~ section .incorrect_a,
+#q5d:checked ~ section .incorrect_a,
+#q5a:checked ~ section .incorrect_a,
+#q5b:checked ~ section .incorrect_a,
+#q5c:checked ~ section .correct {
   display: block;
 }

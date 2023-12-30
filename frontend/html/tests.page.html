@@ -1,130 +1,407 @@
 {{template "base" .}} {{define "body"}}
 <div class="tests-body">
-  <div class="tests-block">
-    <div class="tests-block-text">
-      <h3>Test 1</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </div>
-
-    <img
-      src="/frontend/html/scientist.jpg"
-      alt="Girl in a jacket"
-      class="tests-block-image"
-    />
+  <div class="info-block">
+    <p>Жарайсың! Бактерияларды зертханада өсіру культивациялау деп аталады!</p>
+    <p>Ал енді сынамаларды бастауға болады!</p>
   </div>
 
-  <div class="tests-block">
-    <div class="tests-block-text">
-      <h3>Test 2</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+  <input type="checkbox" id="test1-header" class="header-checkbox" />
+  <label class="test-header" for="test1-header"
+    ><h3>Қозғалыс сынамасы</h3>
+  </label>
+
+  <div class="tests-main-block" id="test1-main-block">
+    <div class="tests-block">
+      <div class="tests-block-text">
+        <p>
+          Қоректік заттары бар түтіктің ортасында инемен бактерияларды батырып,
+          біраз уақытқа қалдырамыз. Егер түтіктің ортасында қызғылт сызық пайда
+          болса онда бактерия қозғала алмайды ал егер бүкіл түтік қызғылт болса
+          онда бактерия қозғала алады дегенді білдіреді.
+        </p>
+        <p>!Сынама нәтижесін алу үшін сұраққа жауап беріңіз!</p>
+      </div>
+
+      <img
+        src="/frontend/test1-img.jpg"
+        alt="Қозғалыс сынамасы фото"
+        class="tests-block-image"
+      />
     </div>
 
-    <img
-      src="/frontend/html/scientist.jpg"
-      alt="Girl in a jacket"
-      class="tests-block-image"
-    />
+    <form>
+      <fieldset id="q1">
+        <!-- style=" background-color: #02050f; background-image:
+        url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+        background-size: cover; background-size: 60%; " -->
+        <!-- https://i.imgur.com/FvVxt2D.png -->
+        <legend>Бактерияға қандай органелла қозғалуға мұрша береді:</legend>
+        <div>
+          <input type="radio" name="q1" id="q1a" />
+          <label for="q1a">Флагелла</label>
+          <input type="radio" name="q1" id="q1b" />
+          <label for="q1b">Ф-пили</label>
+          <input type="radio" name="q1" id="q1c" />
+          <label for="q1c">Капсула</label>
+          <input type="radio" name="q1" id="q1d" />
+          <label for="q1d">Рибосома</label>
+          <section>
+            <div class="message correct">
+              <p>Жауабыңыз дұрыс!</p>
+              <img
+                src="frontend/test1correct-img.jpg"
+                style="height: 200px; width: auto; float: left"
+              />
+            </div>
+            <p class="message incorrect">Қате</p>
+            <p class="message incorrect_a">Дұрыс жауап - Флагелла</p>
+          </section>
+          <!-- <p class="button-next">
+            <a class="button" href="#q2">Next question</a>
+          </p> -->
+
+          <!-- <p class="button-next">
+            <span class="congrats">
+              Congratulations, you have finished the quiz!
+            </span>
+          </p> -->
+        </div>
+      </fieldset>
+
+      <!-- <p class="button-next">
+        <span class="congrats">
+          Congratulations, you have finished the quiz!
+        </span>
+      </p> -->
+    </form>
   </div>
 
-  <div class="tests-block">
-    <div class="tests-block-text">
-      <h3>Test 3</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-    </div>
-
-    <img
-      src="/frontend/html/scientist.jpg"
-      alt="Girl in a jacket"
-      class="tests-block-image"
-    />
-  </div>
-
-  <form>
-    <fieldset id="q1">
-      <!-- style=" background-color: #02050f; background-image:
-      url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
-      background-size: cover; background-size: 60%; " -->
-      <!-- https://i.imgur.com/FvVxt2D.png -->
-      <legend>
-        Who was the first man<br />
-        in space?
-      </legend>
-      <div>
-        <input type="radio" name="q1" id="q1a" />
-        <label for="q1a">Baron Munchausen</label>
-        <input type="radio" name="q1" id="q1b" />
-        <label for="q1b">Neil Armstrong</label>
-        <input type="radio" name="q1" id="q1c" />
-        <label for="q1c">Alan Shepard</label>
-        <input type="radio" name="q1" id="q1d" />
-        <label for="q1d">Yuri Gagarin</label>
-        <section>
-          <div class="message correct">
-            <img src="https://i.imgur.com/H9NVua3.jpg" />
-            <p>This is right!</p>
-            <p>
-              Yuri Alekseyevich Gagarin  was a Soviet Air Forces pilot and
-              cosmonaut who became the first human to journey into outer space;
-              his capsule, Vostok 1, completed one orbit of Earth on 12 April
-              1961.
-            </p>
-          </div>
-          <p class="message incorrect">This is incorrect!</p>
-          <p class="message incorrect_a">
-            <img src="https://i.imgur.com/VFpGLPs.png" />
-            Baron Munchausen
-            <a
-              href="http://онлайн-читать.рф/распе-мюнхаузен-первое-путешествие-на-луну/"
-              target="_blank"
-              >went</a
-            >
-            straight to the Moon!
-          </p>
-          <p class="message incorrect_c">
-            Alan Shepard was first man in space from USA.
-          </p>
-        </section>
-        <!-- <p class="button-next">
-          <a class="button" href="#q2">Next question</a>
-        </p> -->
-
-        <p class="button-next">
-          <span class="congrats">
-            Congratulations, you have finished the quiz!
-          </span>
+  <input type="checkbox" id="test2-header" class="header-checkbox" />
+  <label class="test-header" for="test2-header"> <h3>Грам сынағы</h3></label>
+  <div class="tests-main-block" id="test2-main-block">
+    <div class="tests-block">
+      <div class="tests-block-text">
+        <p>
+          Грам сынағы бактерияларды екі түске бояйды қызыл немесе қызғылт немесе
+          көк және күлгін. Көк немесе күлгін түс бактерияның грамм оң екенін
+          білдіреді. қызыл немесе қызғылт бактерияның грам теріс екенін
+          білдіреді. Грам сынағын микроскоп арқылы бақыланады. Бояу арқасында
+          бактерияның формасын да анықтауға болады. Бактерия формалары:
+          дөңгелек, таяқша тәрізді, үтір түрінде, спираль.
         </p>
       </div>
-    </fieldset>
 
-    <!-- <p class="button-next">
-      <span class="congrats">
-        Congratulations, you have finished the quiz!
-      </span>
-    </p> -->
-  </form>
+      <div class="tests-block-image">
+        <img src="/frontend/test2-img1.png" alt="Бактерия формалары 1" />
+        <img src="/frontend/test2-img2.png" alt="Бактерия формалары 1" />
+      </div>
+    </div>
+
+    <form>
+      <fieldset id="q2">
+        <!-- style=" background-color: #02050f; background-image:
+        url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+        background-size: cover; background-size: 60%; " -->
+        <!-- https://i.imgur.com/FvVxt2D.png -->
+        <legend>Дөңгелек бактериялар кокки деп аталады</legend>
+        <div>
+          <input type="radio" name="q2" id="q2a" />
+          <label for="q2a">Дұрыс</label>
+          <input type="radio" name="q2" id="q2b" />
+          <label for="q2b">Бұрыс</label>
+          <section>
+            <div class="message correct">
+              <p>Жауабыңыз дұрыс!</p>
+              <img
+                src="frontend/test2correct-img.png"
+                style="height: 200px; width: auto; float: left"
+              />
+            </div>
+            <p class="message incorrect">Қате</p>
+          </section>
+          <!-- <p class="button-next">
+            <a class="button" href="#q2">Next question</a>
+          </p> -->
+
+          <!-- <p class="button-next">
+            <span class="congrats">
+              Congratulations, you have finished the quiz!
+            </span>
+          </p> -->
+        </div>
+      </fieldset>
+
+      <!-- <p class="button-next">
+        <span class="congrats">
+          Congratulations, you have finished the quiz!
+        </span>
+      </p> -->
+    </form>
+  </div>
+
+  <input type="checkbox" id="test3-header" class="header-checkbox" />
+  <label class="test-header" for="test3-header"
+    ><h3>Каталаза сынамасы</h3>
+  </label>
+  <div class="tests-main-block" id="test3-main-block">
+    <div class="tests-block" style="display: flex; flex-direction: column">
+      <div class="tests-block-text">
+        <p>
+          Каталаза - сутегі асқын тотығының суға ыдырауын катализдейтін
+          оттегінің әсеріне ұшыраған барлық дерлік тірі организмдерде кездесетін
+          кең таралған фермент. Басқаша айтқанда жараларды емлеуге арналған уйде
+          Перекис деп атайтын затты суға айналдырады.
+        </p>
+        <p>
+          Бактерияда каталаза бар болса сутегі асқын тотығы көпіре бастайды.
+          Көпірмесе бактерияда каталаза жоқ дегенді білдіреді.
+        </p>
+      </div>
+
+      <img
+        src="/frontend/test3-img.png"
+        alt="Қозғалыс сынамасы фото"
+        class="tests-block-image"
+        style="
+          float: none;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          border-radius: 0;
+        "
+      />
+    </div>
+
+    <form>
+      <fieldset id="q3">
+        <!-- style=" background-color: #02050f; background-image:
+        url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+        background-size: cover; background-size: 60%; " -->
+        <!-- https://i.imgur.com/FvVxt2D.png -->
+        <legend>
+          Каталаза ферменті жоқ бактерияларды сутегі асқын тотығымен өлтіруге
+          болады, ал каталазасы барлар өлмейді
+        </legend>
+        <div>
+          <input type="radio" name="q3" id="q3a" />
+          <label for="q3a">Дұрыс</label>
+          <input type="radio" name="q3" id="q3b" />
+          <label for="q3b">Бұрыс</label>
+          <section>
+            <div class="message correct">
+              <p>Жауабыңыз дұрыс!</p>
+              <img
+                src="frontend/test3correct-img.png"
+                style="
+                  height: 200px;
+                  width: auto;
+                  float: left;
+                  max-width: 250px;
+                "
+              />
+            </div>
+            <p class="message incorrect">Қате</p>
+          </section>
+          <!-- <p class="button-next">
+            <a class="button" href="#q2">Next question</a>
+          </p> -->
+
+          <!-- <p class="button-next">
+            <span class="congrats">
+              Congratulations, you have finished the quiz!
+            </span>
+          </p> -->
+        </div>
+      </fieldset>
+
+      <!-- <p class="button-next">
+        <span class="congrats">
+          Congratulations, you have finished the quiz!
+        </span>
+      </p> -->
+    </form>
+  </div>
+
+  <input type="checkbox" id="test4-header" class="header-checkbox" />
+  <label class="test-header" for="test4-header"
+    ><h3>Коагулаза сынағы</h3>
+  </label>
+
+  <div class="tests-main-block" id="test4-main-block">
+    <div class="tests-block">
+      <div class="tests-block-text">
+        <p>
+          Коагулаза сұйықтықтың ұйып қалуын тудыратын фермент. Егер бактерияға
+          тамызған немесе түтіктің ішіндегі суйытқы ұйып қалса бактерияда
+          коагулаза бар деген сөз. Фермент адам қанындағы фибриногенді фибринге
+          айналдырады.
+        </p>
+      </div>
+
+      <div class="tests-block-image">
+        <img src="/frontend/test4-img1.png" alt="" />
+        <img src="/frontend/test4-img2.png" alt="" />
+      </div>
+    </div>
+
+    <form>
+      <fieldset id="q4">
+        <!-- style=" background-color: #02050f; background-image:
+        url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+        background-size: cover; background-size: 60%; " -->
+        <!-- https://i.imgur.com/FvVxt2D.png -->
+        <legend>
+          Каталаза ферменті жоқ бактерияларды сутегі асқын тотығымен өлтіруге
+          болады, ал каталазасы барлар өлмейді
+        </legend>
+        <div>
+          <input type="radio" name="q4" id="q4a" />
+          <label for="q4a">Ия</label>
+          <input type="radio" name="q4" id="q4b" />
+          <label for="q4b">Жоқ</label>
+          <section>
+            <div class="message correct">
+              <p>Жауабыңыз дұрыс!</p>
+              <img
+                src="frontend/test4correct-img.png"
+                style="
+                  height: 200px;
+                  width: auto;
+                  float: left;
+                  max-width: 300px;
+                "
+              />
+            </div>
+            <p class="message incorrect">Қате</p>
+          </section>
+          <!-- <p class="button-next">
+            <a class="button" href="#q2">Next question</a>
+          </p> -->
+
+          <!-- <p class="button-next">
+            <span class="congrats">
+              Congratulations, you have finished the quiz!
+            </span>
+          </p> -->
+        </div>
+      </fieldset>
+
+      <!-- <p class="button-next">
+        <span class="congrats">
+          Congratulations, you have finished the quiz!
+        </span>
+      </p> -->
+    </form>
+  </div>
+
+  <input type="checkbox" id="test5-header" class="header-checkbox" />
+  <label class="test-header" for="test5-header"
+    ><h3>Антимикробтық заттарға сезімталдықты тексеру</h3>
+  </label>
+
+  <div class="tests-main-block" id="test5-main-block">
+    <div class="tests-block" style="display: flex; flex-direction: column">
+      <div class="tests-block-text">
+        <p>
+          Бұл сынама антимикробтық препараттың микробтарды жоюдағы тиімділігін
+          анықтау үшін жасалады. Әр науқасың ағзасы әр түрлі секілді бактериалар
+          да бір түрге жатса да антибиотиктерге деген сезімталдылығы әр түрлі
+          болуы мүмкін. Бұл сынамада Петри ыдысында культивацияланған
+          бактерияларға бірнеше әр түрлі препараттың белгілі бір мөлшері
+          салынада. Уақыт өте препарат қойылған жердегі бактериялар өліп ыдыс
+          тазара бастайды. Тазарған аймақтың айданы антибиотиктік тиімділігін
+          анықтайды. Тазаған аймақ ауданы = антибиотиктің тиімділігі
+        </p>
+
+        <p>
+          (Сұраққа анықтама: амоксициллин (AMC) цефалотин (СF) левомицетин (C)
+          ципрофлоксацин (CIP) эритромицин (E) клиндамицин(CC) оксациллин (OX)
+          пенициллин(P) стрептомицин(S) тетрациклин (TE) тобрамицин (TM)
+          триметоприм сульфат (TXS) ванкомицин (VA) )
+          <img
+            src="/frontend/test5-img2.png"
+            alt=""
+            class="tests-block-image"
+            style="float: right; min-width: 200px"
+          />
+        </p>
+      </div>
+
+      <img
+        src="/frontend/test5-img.png"
+        alt=""
+        class="tests-block-image"
+        style="
+          float: none;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          border-radius: 0;
+        "
+      />
+    </div>
+
+    <form>
+      <fieldset id="q5">
+        <!-- style=" background-color: #02050f; background-image:
+        url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg);
+        background-size: cover; background-size: 60%; " -->
+        <!-- https://i.imgur.com/FvVxt2D.png -->
+        <legend style="font-size: 130%">
+          Берілген суретке қарап ауруханада ципрофлоксацин болмаған жағдайда
+          антибиотиктердің қайсысын қолдану керек екенін анықтаңыз?
+        </legend>
+        <div>
+          <input type="radio" name="q5" id="q5a" />
+          <label for="q5a">Амоксициллин (AMC)</label>
+          <input type="radio" name="q5" id="q5b" />
+          <label for="q5b">Цефалотин (СF)</label>
+          <input type="radio" name="q5" id="q5c" />
+          <label for="q5c">Левомицетин</label>
+          <input type="radio" name="q5" id="q5d" />
+          <label for="q5d">Ципрофлоксацин</label>
+          <input type="radio" name="q5" id="q5e" />
+          <label for="q5e">Эритромицин</label>
+          <section>
+            <div class="message correct">
+              <p>Жауабыңыз дұрыс!</p>
+              <img
+                src="frontend/test5correct-img.png"
+                style="float: left; min-width: 200px"
+              />
+            </div>
+            <p class="message incorrect">Қате</p>
+            <p class="message incorrect_a">Дұрыс жауап - Левомицетин</p>
+          </section>
+          <!-- <p class="button-next">
+            <a class="button" href="#q2">Next question</a>
+          </p> -->
+
+          <!-- <p class="button-next">
+            <span class="congrats">
+              Congratulations, you have finished the quiz!
+            </span>
+          </p> -->
+        </div>
+      </fieldset>
+
+      <!-- <p class="button-next">
+        <span class="congrats">
+          Congratulations, you have finished the quiz!
+        </span>
+      </p> -->
+    </form>
+  </div>
+
+  <input type="checkbox" id="bacteria-header" class="header-checkbox" />
+  <label class="test-header" for="bacteria-header"><h3>Бактериялар</h3> </label>
+
+  <div class="tests-main-block" id="bacteria-main-block">
+    <img
+      src="/frontend/bacteria.png"
+      alt=""
+    />
+  </div>
 </div>
-{{end}}
+  {{end}}
+</div>

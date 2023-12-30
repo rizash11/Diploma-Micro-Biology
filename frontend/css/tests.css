@@ -2,21 +2,25 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  min-height: calc(100vh - 4.2em);
 
   /* background-color: #e1e1e1; */
   background-color: #000000;
-  background-image: url(https://i.imgur.com/zzIke0P.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-image: url(https://i.imgur.com/zzIke0P.gif); */
+  background-image: url("magicpattern-starry-night-1703701619536.png");
+  /* background-repeat: no-repeat; */
+  background-repeat: repeat;
+  background-size: auto;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
 
 .tests-block {
-  width: 90%;
+  width: calc(40vw + 40px);
+  min-width: 340px;
   min-height: 30vh;
-  margin: 5vh;
-  border-radius: 5vh;
+  margin: 0;
+  border-radius: 2vh 2vh 0 0;
   background-color: #e1e1e1; /* #ffffff */
 
   display: flex;
@@ -26,7 +30,7 @@
 }
 
 .tests-block-text {
-  width: 40vw;
+  /* width: 40vw; */
   overflow: auto;
   padding: 5vh;
 }
@@ -34,10 +38,72 @@
 .tests-block-image {
   height: 100%;
   width: auto;
-  margin: 0;
+  max-width: 50%;
+  margin: 1vh;
   padding: 0;
-  border-radius: 0 5vh 5vh 0;
+  border-radius: 1vh;
+  float: right;
 }
+
+.info-block {
+  background-color: rgb(6, 53, 97);
+  max-width: 80%;
+  color: #eee;
+  font-size: 120%;
+  padding: 1vh;
+  border-radius: 1vh;
+  margin: 1vh;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* TEST HEADERS */
+.test-header {
+  background-color: rgb(6, 53, 97);
+  color: #eee;
+  padding: 0 1vw 0;
+  margin: 1vh;
+  border-radius: 1vh;
+  width: 300px;
+}
+
+.test-header:hover {
+  cursor: pointer;
+}
+
+.header-checkbox {
+  display: none;
+}
+
+#test1-header:checked ~ #test1-main-block,
+#test2-header:checked ~ #test2-main-block,
+#test3-header:checked ~ #test3-main-block,
+#test4-header:checked ~ #test4-main-block,
+#test5-header:checked ~ #test5-main-block,
+#bacteria-header:checked ~ #bacteria-main-block {
+  display: block;
+  margin: auto;
+  margin-bottom: 5vh;
+  padding: 0;
+}
+
+.tests-main-block {
+  display: none;
+}
+
+#bacteria-main-block {
+  padding: 3vh;
+  background-color: #eee;
+}
+
+#bacteria-main-block img {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* TEST HEADERS */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 /* For phones */
 @media (max-width: 1000px) {
@@ -46,9 +112,12 @@
   }
 
   .tests-block-image {
+    float: none;
     height: auto;
     width: 100%;
-    border-radius: 0 0 5vh 5vh;
+    margin: 0;
+    border-radius: 0;
+    max-width: none;
   }
 
   .tests-block-text {
