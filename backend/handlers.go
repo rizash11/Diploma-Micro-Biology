@@ -2,14 +2,16 @@ package backend
 
 import (
 	"net/http"
+	"os"
+	"strings"
 )
 
 // Keeps all of the handlers of the app.
 func (app *Application) Routes() *http.ServeMux {
 	router := http.NewServeMux()
 	router.HandleFunc("/", app.home)
-	router.HandleFunc("/cultivation", app.cultivation)
-	router.HandleFunc("/tests", app.tests)
+	router.HandleFunc("/cultivation/", app.cultivation)
+	router.HandleFunc("/tests/", app.tests)
 	router.Handle("/frontend/", http.StripPrefix("/frontend", http.FileServer(http.Dir("./frontend/"))))
 
 	return router
@@ -26,13 +28,15 @@ func (app *Application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	r.URL.Path = "/cultivation" // redirecting to the cultivation page
+	r.URL.Path = "/cultivation/kz" // redirecting to the cultivation page
 	app.Routes().ServeHTTP(w, r)
 }
 
 func (app *Application) cultivation(w http.ResponseWriter, r *http.Request) {
+	split := strings.Split(r.URL.Path, string(os.PathSeparator))
+
 	switch {
-	case r.URL.Path != "/cultivation":
+	case split[1] != "cultivation":
 		app.NotFound(w)
 		return
 
@@ -41,12 +45,14 @@ func (app *Application) cultivation(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	app.Render(w, r, "cultivation.page.html", nil)
+	app.Render(w, r, "cultivation.page.html")
 }
 
 func (app *Application) tests(w http.ResponseWriter, r *http.Request) {
+	split := strings.Split(r.URL.Path, string(os.PathSeparator))
+
 	switch {
-	case r.URL.Path != "/tests":
+	case split[1] != "tests":
 		app.NotFound(w)
 		return
 
@@ -55,5 +61,5 @@ func (app *Application) tests(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	app.Render(w, r, "tests.page.html", nil)
+	app.Render(w, r, "tests.page.html")
 }

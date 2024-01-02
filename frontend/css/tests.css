@@ -7,10 +7,10 @@
   /* background-color: #e1e1e1; */
   background-color: #000000;
   /* background-image: url(https://i.imgur.com/zzIke0P.gif); */
-  background-image: url("magicpattern-starry-night-1703701619536.png");
+  background-image: url("https://cdn.dribbble.com/users/701774/screenshots/5523990/media/f28851bd76372b03d778dd4d278aa7f7.gif");
   /* background-repeat: no-repeat; */
   background-repeat: repeat;
-  background-size: auto;
+  background-size: auto auto;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
 }
@@ -20,8 +20,7 @@
   min-width: 340px;
   min-height: 30vh;
   margin: 0;
-  border-radius: 2vh 2vh 0 0;
-  background-color: #e1e1e1; /* #ffffff */
+  background-color: antiquewhite; /* #e1e1e1 #ffffff */
 
   display: flex;
   flex-flow: row nowrap;
@@ -46,24 +45,43 @@
 }
 
 .info-block {
-  background-color: rgb(6, 53, 97);
+  background-color: #573;
   max-width: 80%;
   color: #eee;
   font-size: 120%;
-  padding: 1vh;
-  border-radius: 1vh;
+  padding: 1vw;
+  border-radius: 2vh;
   margin: 1vh;
+
+  width: calc(40vw + 40px - 2vw);
+  min-width: calc(340px - 2vw);
+}
+
+#bacteria-main-block {
+  width: calc(40vw + 40px - 2vw);
+  min-width: calc(340px - 2vw);
+  background-color: #eee;
+}
+
+#bacteria-main-block img {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 /* TEST HEADERS */
 .test-header {
-  background-color: rgb(6, 53, 97);
+  background-color: #573;
   color: #eee;
   padding: 0 1vw 0;
   margin: 1vh;
-  border-radius: 1vh;
+  border-radius: 2vh;
   width: 300px;
+
+  width: calc(40vw + 40px - 2vw);
+  min-width: calc(340px - 2vw);
 }
 
 .test-header:hover {
@@ -78,28 +96,38 @@
 #test2-header:checked ~ #test2-main-block,
 #test3-header:checked ~ #test3-main-block,
 #test4-header:checked ~ #test4-main-block,
-#test5-header:checked ~ #test5-main-block,
-#bacteria-header:checked ~ #bacteria-main-block {
+#test5-header:checked ~ #test5-main-block {
   display: block;
   margin: auto;
   margin-bottom: 5vh;
   padding: 0;
 }
 
+#test1-header:checked ~ #test1-label,
+#test2-header:checked ~ #test2-label,
+#test3-header:checked ~ #test3-label,
+#test4-header:checked ~ #test4-label,
+#test5-header:checked ~ #test5-label,
+#bacteria-header:checked ~ #bacteria-label {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
 .tests-main-block {
   display: none;
 }
 
-#bacteria-main-block {
-  padding: 3vh;
-  background-color: #eee;
-}
-
-#bacteria-main-block img {
-  width: 100%;
-  max-width: none;
+#bacteria-header:checked ~ #bacteria-main-block {
+  display: block;
   margin: 0;
-  border-radius: 0;
+  padding: 1vw;
+  background-color: antiquewhite;
+  margin-bottom: 5vh;
+  width: calc(40vw + 40px - 2vw);
+  min-width: calc(340px - 2vw);
+  border-bottom-left-radius: 2vh;
+  border-bottom-right-radius: 2vh;
 }
 
 /* TEST HEADERS */
