@@ -25,6 +25,7 @@
   /* position: fixed; */
   /* background-color: #f1f1f1; */
   width: 60vw;
+  min-width: 340px;
   border-radius: 5vh;
   padding: 2vh;
   margin: 3vh;
