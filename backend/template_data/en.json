@@ -1,70 +1,71 @@
 {
   "Lang": { "Value": "en" },
-  "Header": { "Text1": "Header" },
-  "Footer": { "Text1": "Footer" },
+  "Header": { "Text1": "Dissertation" },
+  "Footer": { "Text1": "Muratbek N." },
   "Cultivation": {
-    "Text1": "Text1",
-    "Text2": "Text2",
-    "Button": "Button"
+    "Text1": "A total of 18 persons attending a party became ill approximately 3 to 4 hours after eating. The most common symptoms were nausea, vomiting and diarrhea. The symptoms lasted a median of 24 hours. The illness was associated with eating potato salad at the party. A food preparer had prepared salad at home, transported it to her workplace, and refrigerated salad in a large plastic container covered with foil only (aerobic conditions). The salad was served cold the next day. What is the microorganism that most likely contributed to the sickness?",
+    "Text2": "Analyzes of the patient were collected. However, it is not possible to conduct a test immediately. First, it is necessary to increase the number of bacteria taken from patients! To do so please press the button: !Cultivate!.",
+    "Button": "Cutlivate"
   },
   "Tests": {
-    "Text1": "Text1!",
-    "Text2": "Text2"
+    "Text1": "Well done ! Cultivation is the process of propagating organisms by providing the proper environmental conditions.",
+    "Text2": "And now you can start testing!"
   },
   "Test1": {
-    "TestName": "Test1",
-    "Text1": "Text!",
-    "Text2": "!Text!",
-    "Question": "Question",
-    "Option1": "Option1",
-    "Option2": "Option2",
-    "Option3": "Option3",
-    "Option4": "Option4",
+    "TestName": "Motility test",
+    "Text1": "To test bacteria for motility first of all we inoculate bacteria with a needle to the middle of the tube with nutrients and leave it for some time. If a pink line appears in the middle of the tube, it means that the bacteria cannot move, and if the entire tube is pink, it means that the bacteria can move.",
+    "Text2": "Answer the question below to get your results",
+    "Question": "What organelle allows bacteria to move?",
+    "Option1": "Flagella",
+    "Option2": "F-pili",
+    "Option3": "Capsule",
+    "Option4": "Ribosome ",
     "Correct": "Correct",
     "Incorrect": "Incorrect",
-    "Hint": "Hint"
+    "Hint": "The right answer is Flagella"
   },
   "Test2": {
-    "TestName": "Test2",
-    "Text1": "Text",
-    "Question": "Question",
-    "Option1": "Option1",
-    "Option2": "Option2",
+    "TestName": "Gram staining test ",
+    "Text1": "Gram test stains bacteria in two colors red and pink or blue and purple. A blue or purple color means that the bacteria is gram positive. Red or pink means that the bacteria is gram negative. The gram positive bacteria has a thick cell wall made up of peptidoglycan. The gram negative bacteria has a thin cell wall. Gram test is observed under a microscope. The shape of the bacteria can also be determined due to staining. Usually bacteria are classified into 4 groups according to their shape: round, rod-shaped, comma-shaped, spiral.",
+    "Question": "Is it true that round bacteria are cocci, rod-shaped bacteria are bacillus, comma-shaped bacteria are vibrions and spiral bacteria are spirilla?",
+    "Option1": "False",
+    "Option2": "True",
     "Correct": "Correct",
     "Incorrect": "Incorrect"
   },
   "Test3": {
-    "TestName": "Test3",
-    "Text1": "Text1",
-    "Text2": "Text2",
-    "Question": "Question",
-    "Option1": "Option1",
-    "Option2": "Option2",
+    "TestName": "Catalase test",
+    "Text1": "Catalase is a common enzyme found in almost all living organisms exposed to oxygen that catalyzes the breakdown of hydrogen peroxide into water. In other words, hydrogen peroxide is a substance called “Перекис”, which is used for a wound healing at home.",
+    "Text2": "If catalase is present in bacteria, it converts hydrogen peroxide into water and it begins to bubble. If it doesn't foam, it means there is no catalase in the bacteria. Figure below presents the reaction",
+    "Question": "Is it true that Bacteria without the catalase enzyme can be killed by hydrogen peroxide, but those with catalase are not",
+    "Option1": "True",
+    "Option2": "False",
     "Correct": "Correct",
     "Incorrect": "Incorrect"
   },
   "Test4": {
-    "TestName": "Test4",
-    "Text1": "Text",
-    "Question": "Question",
-    "Option1": "Option1",
-    "Option2": "Option2",
-    "Correct": "Correct",
-    "Incorrect": "Incorrect"
-  },
-  "Test5": {
-    "TestName": "Test5",
-    "Text1": "Text",
-    "Text2": "Text2",
-    "Question": "Question",
-    "Option1": "Option1",
-    "Option2": "Option2",
-    "Option3": "Option3",
-    "Option4": "Option4",
-    "Option5": "Option5",
+    "TestName": "Coagulase test ",
+    "Text1": "Coagulase is an enzyme that causes fluid to clot. If the liquid dropped on the bacteria on the slide or inside the tube become gelly, it means that the bacteria has coagulase. The enzyme converts fibrinogen in human blood into fibrin and promotes formation of the clot that closes the wounds",
+    "Question": "Can bacterial coagulase help people with blood clotting problems?",
+    "Option1": "Yes",
+    "Option2": "No",
     "Correct": "Correct",
     "Incorrect": "Incorrect",
-    "Hint": "Hint"
+    "Hint": "Anwer is “Yes”, as Insulin can be made from the pancreas of pigs or cows. Human versions can be made either by modifying pig versions, or recombinant technology using mainly E. coli or Saccharomyces cerevisiae bacterial coagulase also can help people with blood cloting problems (if it caused by defect in conversion of fibrinogen into fibrin)."
+  },
+  "Test5": {
+    "TestName": "Antimicrobial susceptibility test",
+    "Text1": "This test is done to determine the effectiveness of an antimicrobial drug in killing microbes. Just as the organisms of each person are different, even if the bacteria belong to the same species, the properties of the bacteria can be different. In this test, bacteria cultured in a Petri dish are treated with the same amount of several drugs. Over time, bacteria dies due to antibiotic activity and forms clean areas around the drug as it presented in the figure 9 below. Antibiotic effectiveness is calculated according to the size of the cleaned area. Cleaned area = antibiotic effectiveness",
+    "Text2": "Abbreviations: amoxicillin (AMC); cephalothin (CF); chloramphenicol (C); ciprofloxacin (CIP); erythromycin (E); clindamycin (CC); oxacillin (OX); penicillin (P); streptomycin (S); tetracycline (TE); tobramycin (TM); trimethoprim sulfate (TXS); vancomycin (VA);",
+    "Question": "Looking at the picture below, determine which antibiotic should be used in the absence of ciprofloxacin in the hospital? ",
+    "Option1": "amoxicillin (AMC)",
+    "Option2": "cephalothin (CF) ",
+    "Option3": "chloramphenicol (C) ",
+    "Option4": "ciprofloxacin (CIP)",
+    "Option5": "erythromycin (E) ",
+    "Correct": "Correct",
+    "Incorrect": "Incorrect",
+    "Hint": "Correct anwer is C chloramphenicol (C)"
   },
   "Bacteria": {
     "Header": "Bacteria"
