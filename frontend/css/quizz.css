@@ -10,9 +10,6 @@
   height: 70vh;
   min-height: 550px;
   color: white;
-  background-color: #001233;
-  background-repeat: no-repeat;
-  background-size: contain;
   border: none;
   border-radius: 0 0 10px 10px;
   position: relative;
@@ -21,22 +18,27 @@
   padding-bottom: 150px;
 
   /* margin-top: 20px; */
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   /* margin-bottom: 85px; */
   counter-increment: question;
+
+  background-color: #02050f;
+  background-image: url("magicpattern-blob-composition-1703703699022(1).jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 60%;
 }
 
-#q1,
+/* #q1,
 #q2,
 #q3,
 #q4,
-#q5 {
+#q5,
+#q6 {
   background-color: #02050f;
-  /* background-image: url(https://i.pinimg.com/originals/a3/e0/c5/a3e0c5afa608e49e7dc355828ed47c67.jpg); */
   background-image: url("magicpattern-blob-composition-1703703699022(1).jpg");
   background-size: 100% 60%;
-}
+} */
 
 fieldset legend {
   position: absolute;
@@ -171,5 +173,16 @@ fieldset:target ~ section#start {
 #q5a:checked ~ section .incorrect_a,
 #q5b:checked ~ section .incorrect_a,
 #q5c:checked ~ section .correct {
+  display: block;
+}
+
+/* Question 6 correct/incorrect answer rules */
+#q6c:checked ~ section .incorrect {
+  display: none;
+}
+#q6d:checked ~ section .incorrect_a,
+#q6a:checked ~ section .incorrect_a,
+#q6b:checked ~ section .incorrect_a,
+#q6c:checked ~ section .correct {
   display: block;
 }

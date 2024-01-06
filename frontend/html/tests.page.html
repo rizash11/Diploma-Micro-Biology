@@ -270,32 +270,29 @@
   </label>
 
   <div class="tests-main-block" id="test5-main-block">
-    <div class="tests-block" style="display: flex; flex-direction: column">
+    <div
+      class="tests-block"
+      style="display: flex; flex-direction: column; align-items: center"
+    >
       <div class="tests-block-text">
         <p>{{.Test5.Text1}}</p>
 
         <p>
           {{.Test5.Text2}}
           <img
-            src="/frontend/test5-img2.png"
+            src="/frontend/test5-img.png"
             alt=""
             class="tests-block-image"
-            style="float: right; min-width: 200px"
+            style="float: none; width: 100%; max-width: none; margin: 0"
           />
         </p>
       </div>
 
       <img
-        src="/frontend/test5-img.png"
+        src="/frontend/test5-img2.png"
         alt=""
         class="tests-block-image"
-        style="
-          float: none;
-          width: 100%;
-          max-width: none;
-          margin: 0;
-          border-radius: 0;
-        "
+        style="float: none; min-width: 200px"
       />
     </div>
 
@@ -354,7 +351,28 @@
   </label>
 
   <div class="tests-main-block" id="bacteria-main-block">
-    <img src="/frontend/bacteria.png" alt="" />
+    <img id="bacteria-img" src="/frontend/bacteria.png" alt="" />
+
+    <fieldset id="q6" class="quizz-fieldset">
+      <legend style="font-size: 130%">{{.Bacteria.Question}}</legend>
+      <div>
+        <input type="radio" name="q6" id="q6a" />
+        <label for="q6a">{{.Bacteria.Option1}}</label>
+        <input type="radio" name="q6" id="q6b" />
+        <label for="q6b">{{.Bacteria.Option2}}</label>
+        <input type="radio" name="q6" id="q6c" />
+        <label for="q6c">{{.Bacteria.Option3}}</label>
+        <input type="radio" name="q6" id="q6d" />
+        <label for="q6d">{{.Bacteria.Option4}}</label>
+        <section>
+          <div class="message correct">
+            <p>{{.Bacteria.Correct}}</p>
+          </div>
+          <p class="message incorrect">{{.Bacteria.Incorrect}}</p>
+          <p class="message incorrect_a">{{.Bacteria.Hint}}</p>
+        </section>
+      </div>
+    </fieldset>
   </div>
 </div>
 {{end}} {{define "language_buttons"}}

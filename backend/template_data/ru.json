@@ -68,6 +68,14 @@
     "Hint": "Правильный ответ - хлорамфеникол (С)"
   },
   "Bacteria": {
-    "Header": "Бактерии"
+    "Header": "Бактерии",
+    "Question": "Какой бактерией отравились 18 человек?",
+    "Option1": "E. Coli",
+    "Option2": "S. pneumonia",
+    "Option3": "S. aureus",
+    "Option4": "B. cereus",
+    "Correct": "Верно",
+    "Incorrect": "Неверно",
+    "Hint": "Правильный ответ - S. aureus"
   }
 }

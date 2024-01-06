@@ -68,6 +68,14 @@
     "Hint": "Correct anwer is C chloramphenicol (C)"
   },
   "Bacteria": {
-    "Header": "Bacteria"
+    "Header": "Bacteria",
+    "Question": "What bacteria cause 18 people's poisoning?",
+    "Option1": "E. Coli",
+    "Option2": "S. pneumonia",
+    "Option3": "S. aureus",
+    "Option4": "B. cereus",
+    "Correct": "Correct!",
+    "Incorrect": "Incorrect",
+    "Hint": "The answer is S. aureus"
   }
 }

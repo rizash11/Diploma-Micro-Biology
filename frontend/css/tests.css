@@ -64,7 +64,8 @@
 }
 
 #bacteria-main-block img {
-  width: 100%;
+  width: calc(40vw + 40px - 2vw);
+  min-width: calc(340px - 2vw);
   max-width: none;
   margin: 0;
   border-radius: 0;
@@ -119,12 +120,14 @@
 }
 
 #bacteria-header:checked ~ #bacteria-main-block {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 1vw;
+  padding: 0;
   background-color: antiquewhite;
   margin-bottom: 5vh;
-  width: calc(40vw + 40px - 2vw);
+  width: calc(40vw + 40px);
   min-width: calc(340px - 2vw);
   border-bottom-left-radius: 2vh;
   border-bottom-right-radius: 2vh;

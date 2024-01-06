@@ -67,6 +67,14 @@
     "Hint": "Дұрыс жауап - хлорамфеникол (С)"
   },
   "Bacteria": {
-    "Header": "Бактериялар"
+    "Header": "Бактериялар",
+    "Question": "18 адам қай бактериямен уланды?",
+    "Option1": "E. Coli",
+    "Option2": "S. pneumonia",
+    "Option3": "S. aureus",
+    "Option4": "B. cereus",
+    "Correct": "Жауабыңыз дұрыс!",
+    "Incorrect": "Қате",
+    "Hint": "Дұрыс жауап - S. aureus"
   }
 }
