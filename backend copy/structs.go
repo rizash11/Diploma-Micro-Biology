@@ -13,9 +13,6 @@ type Application struct {
 }
 
 type TemplateDataStruct struct {
-	Fname string
-	Lname string
-
 	TemplateTextKz map[string]map[string]string
 	TemplateTextRu map[string]map[string]string
 	TemplateTextEn map[string]map[string]string

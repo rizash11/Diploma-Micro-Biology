@@ -1,0 +1,57 @@
+{{template "base" .}} {{define "body"}}
+<div class="cltn-body">
+  <div class="cltn-block">
+    <p class="cltn-block-text">
+      <img
+        src="/frontend/html/scientist.jpg"
+        alt="Girl in a jacket"
+        class="cltn-image"
+      />
+      {{.Cultivation.Text1}}
+      <p>
+        {{.Cultivation.Text2}}
+      </p>
+    </p>
+
+    {{$lang := .Lang.Value}}
+    {{if (eq $lang "kz")}}
+      <a href="/tests/kz" target="_self">
+    {{else if (eq $lang "ru")}}
+      <a href="/tests/ru" target="_self">
+    {{else if (eq $lang "en")}}
+      <a href="/tests/en" target="_self">
+    {{else}}
+      <a href="/tests/kz" target="_self">
+    {{end}}
+      <button type="button" class="cltn-button">{{.Cultivation.Button}}</button>
+    </a>
+
+  </div>
+</div>
+{{end}}
+
+{{define "language_buttons"}}
+<fieldset id="lang_buttons">
+  <label>
+    <input type="radio" id="lang_cltn_kz" name="button" class="lang_button"/>
+    <a href="/cultivation/kz" target="_self">
+      kz
+    </a>
+  </label>
+
+  <label>
+    <input type="radio" id="lang_cltn_ru" name="button" class="lang_button"/>
+    <a href="/cultivation/ru" target="_self">
+      ru
+    </a>
+  </label>
+
+  <label>
+    <input type="radio" id="lang_cltn_en" name="button" class="lang_button"/>
+    <a href="/cultivation/en" target="_self">
+      en
+    </a>
+  </label>
+
+</fieldset>
+{{end}}

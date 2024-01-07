@@ -1,0 +1,55 @@
+@import "tests.css";
+@import "cultivation.css";
+@import "quizz.css";
+
+.header {
+  position: sticky;
+  width: calc(100% - 10vw);
+  /* background: linear-gradient(to bottom, #080808, #090909); */
+  background-color: #351;
+  top: 0;
+  margin: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: #eee;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#lang_buttons {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  border-radius: 1em;
+  background-color: antiquewhite;
+}
+
+#lang_buttons [type="radio"] {
+  display: none;
+}
+#lang_buttons label {
+  margin: 0.3em;
+}
+
+.footer {
+  width: 90%;
+  /* background: linear-gradient(to bottom, #090909, #101010); */
+  background-color: #351;
+  top: 0;
+  margin: 0;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: #eee;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+body {
+  margin: 0;
+}

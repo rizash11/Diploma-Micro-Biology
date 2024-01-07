@@ -1,31 +1,6 @@
 {{template "base" .}} {{define "body"}}
 
-<!--  -->
-{{if or (not .Fname) (not .Lname)}}
-<section id="name-background">
-  {{$lang := .Lang.Value}}
-  {{if (eq $lang "kz")}}
-  <form id="name-window" action="/tests/kz">
-  {{else if (eq $lang "ru")}}
-  <form id="name-window" action="/tests/ru">
-  {{else if (eq $lang "en")}}
-  <form id="name-window" action="/tests/en">
-  {{else}}
-  <form id="name-window" action="/tests/kz">
-  {{end}}
-    <h3>Blank</h3>
-
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="fname" required />
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lname" required />
-
-    <input type="submit" value="submit" />
-  </form>
-</section>
-{{end}}
-
-<!--  -->
+<!-- <section id="name-window"></section> -->
 
 <div class="tests-body">
   <div class="info-block">
