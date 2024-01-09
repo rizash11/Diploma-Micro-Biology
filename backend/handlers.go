@@ -45,6 +45,11 @@ func (app *Application) cultivation(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if len(app.TemplateData.Fname) == 0 || len(app.TemplateData.Lname) == 0 {
+		app.TemplateData.Fname = r.FormValue("fname")
+		app.TemplateData.Lname = r.FormValue("lname")
+	}
+
 	app.Render(w, r, "cultivation.page.html")
 }
 

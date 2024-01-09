@@ -53,3 +53,64 @@
 body {
   margin: 0;
 }
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* STORING NAME WINDOW */
+
+#name-background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#name-window {
+  /* height: 30vh; */
+  /* min-height: 230px; */
+  width: 40vw;
+  min-width: 300px;
+  background-color: antiquewhite;
+  opacity: 1;
+  border-radius: 5vh;
+  position: fixed;
+
+  margin: auto;
+}
+
+#name-window h3 {
+  width: calc(100%-10vh);
+  height: calc(6vh);
+  min-height: 20%;
+  background-color: #573;
+  color: #eee;
+  margin-top: 0;
+  border-top-right-radius: 5vh;
+  border-top-left-radius: 5vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
+  padding-top: 2vh;
+}
+
+#name-window input[type="text"],
+#name-window label {
+  margin: 0 5% 5% 2vh;
+  width: 90%;
+}
+
+#name-window input[type="submit"] {
+  margin-left: 45%;
+  margin-right: auto;
+}
+
+#name-window p {
+  margin-left: 5%;
+  color: darkgray;
+  font-size: 95%;
+}
+
+/* STORING NAME WINDOW */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */

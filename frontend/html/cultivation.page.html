@@ -1,4 +1,36 @@
 {{template "base" .}} {{define "body"}}
+<!--  -->
+
+{{if or (not .Fname) (not .Lname)}}
+<section id="name-background">
+  {{$lang := .TemplateText.Lang.Value}}
+  {{if (eq $lang "kz")}}
+  <form id="name-window" action="/cultivation/kz">
+  {{else if (eq $lang "ru")}}
+  <form id="name-window" action="/cultivation/ru">
+  {{else if (eq $lang "en")}}
+  <form id="name-window" action="/cultivation/en">
+  {{else}}
+  <form id="name-window" action="/cultivation/kz">
+  {{end}}
+    <h3>Blank</h3>
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" required />
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname" required />
+
+    <input type="submit" value="submit" />
+
+    <p>
+      {{.TemplateText.Cultivation.Note}}
+    </p>
+  </form>
+</section>
+{{end}}
+
+<!--  -->
+
 <div class="cltn-body">
   <div class="cltn-block">
     <p class="cltn-block-text">
@@ -7,13 +39,13 @@
         alt="Girl in a jacket"
         class="cltn-image"
       />
-      {{.Cultivation.Text1}}
+      {{.TemplateText.Cultivation.Text1}}
       <p>
-        {{.Cultivation.Text2}}
+        {{.TemplateText.Cultivation.Text2}}
       </p>
     </p>
 
-    {{$lang := .Lang.Value}}
+    {{$lang := .TemplateText.Lang.Value}}
     {{if (eq $lang "kz")}}
       <a href="/tests/kz" target="_self">
     {{else if (eq $lang "ru")}}
@@ -23,7 +55,7 @@
     {{else}}
       <a href="/tests/kz" target="_self">
     {{end}}
-      <button type="button" class="cltn-button">{{.Cultivation.Button}}</button>
+      <button type="button" class="cltn-button">{{.TemplateText.Cultivation.Button}}</button>
     </a>
 
   </div>

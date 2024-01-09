@@ -65,7 +65,7 @@ func (app *Application) ParseTemplateData(dir string) error {
 	if err != nil {
 		return err
 	}
-	app.TemplateData.TemplateTextKz = tdKz
+	app.TemplateTextKz = tdKz
 
 	// Unmarshalling Ru texts
 	dataRu, err := os.ReadFile(filepath.Join(dir, "ru.json"))
@@ -78,7 +78,7 @@ func (app *Application) ParseTemplateData(dir string) error {
 	if err != nil {
 		return err
 	}
-	app.TemplateData.TemplateTextRu = tdRu
+	app.TemplateTextRu = tdRu
 
 	// Unmarshalling En texts
 	dataEn, err := os.ReadFile(filepath.Join(dir, "en.json"))
@@ -91,7 +91,7 @@ func (app *Application) ParseTemplateData(dir string) error {
 	if err != nil {
 		return err
 	}
-	app.TemplateData.TemplateTextEn = tdEn
+	app.TemplateTextEn = tdEn
 
 	return err
 }
@@ -110,14 +110,18 @@ func (app *Application) Render(w http.ResponseWriter, r *http.Request, name stri
 
 	switch {
 	case split[2] == "kz":
-		err = tmpl.Execute(w, app.TemplateData.TemplateTextKz)
+		app.TemplateData.TemplateText = app.TemplateTextKz
 	case split[2] == "ru":
-		err = tmpl.Execute(w, app.TemplateData.TemplateTextRu)
+		app.TemplateData.TemplateText = app.TemplateTextRu
 	case split[2] == "en":
-		err = tmpl.Execute(w, app.TemplateData.TemplateTextEn)
+		app.TemplateData.TemplateText = app.TemplateTextEn
 	default:
 		err = errors.New(split[0] + "/" + split[1] + "/" + split[2] + " - requested language is not found")
+		app.ServerError(w, err)
+		return
 	}
+
+	err = tmpl.Execute(w, app.TemplateData)
 
 	if err != nil {
 		app.ServerError(w, err)

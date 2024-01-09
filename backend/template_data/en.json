@@ -5,7 +5,8 @@
   "Cultivation": {
     "Text1": "A total of 18 persons attending a party became ill approximately 3 to 4 hours after eating. The most common symptoms were nausea, vomiting and diarrhea. The symptoms lasted a median of 24 hours. The illness was associated with eating potato salad at the party. A food preparer had prepared salad at home, transported it to her workplace, and refrigerated salad in a large plastic container covered with foil only (aerobic conditions). The salad was served cold the next day. What is the microorganism that most likely contributed to the sickness?",
     "Text2": "Analyzes of the patient were collected. However, it is not possible to conduct a test immediately. First, it is necessary to increase the number of bacteria taken from patients! To do so please press the button: !Cultivate!.",
-    "Button": "Cutlivate"
+    "Button": "Cutlivate",
+    "Note": "Note: results of the quizz will only be saved when you click submit on the last question."
   },
   "Tests": {
     "Text1": "Well done ! Cultivation is the process of propagating organisms by providing the proper environmental conditions.",

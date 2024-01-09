@@ -10,13 +10,14 @@ type Application struct {
 	Error_log     *log.Logger
 	TemplateCache map[string]*template.Template
 	TemplateData  *TemplateDataStruct
-}
-
-type TemplateDataStruct struct {
-	Fname string
-	Lname string
 
 	TemplateTextKz map[string]map[string]string
 	TemplateTextRu map[string]map[string]string
 	TemplateTextEn map[string]map[string]string
+}
+
+type TemplateDataStruct struct {
+	Fname        string
+	Lname        string
+	TemplateText map[string]map[string]string
 }
