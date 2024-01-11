@@ -38,8 +38,8 @@
   </div>
 
   <input type="checkbox" id="test1-header" class="header-checkbox" />
-  <label id="test1-label" class="test-header" for="test1-header"
-    ><h3>{{.TemplateText.Test1.TestName}}</h3>
+  <label id="test1-label" class="test-header" for="test1-header">
+    <h3>{{.TemplateText.Test1.TestName}}</h3>
   </label>
 
   <div class="tests-main-block" id="test1-main-block">
@@ -52,30 +52,30 @@
       <img src="/frontend/test1-img.jpg" alt="" class="tests-block-image" />
     </div>
 
-    <form>
+    <form class="quizz-form">
       <fieldset id="q1" class="quizz-fieldset">
         <legend>{{.TemplateText.Test1.Question}}</legend>
-        <div>
-          <input type="radio" name="q1" id="q1a" />
-          <label for="q1a">{{.TemplateText.Test1.Option1}}</label>
-          <input type="radio" name="q1" id="q1b" />
-          <label for="q1b">{{.TemplateText.Test1.Option2}}</label>
-          <input type="radio" name="q1" id="q1c" />
-          <label for="q1c">{{.TemplateText.Test1.Option3}}</label>
-          <input type="radio" name="q1" id="q1d" />
-          <label for="q1d">{{.TemplateText.Test1.Option4}}</label>
-          <section>
-            <div class="message correct">
-              <p>{{.TemplateText.Test1.Correct}}</p>
-              <img
-                src="/frontend/test1correct-img.jpg"
-                style="height: 200px; width: auto; float: left"
-              />
-            </div>
-            <p class="message incorrect">{{.TemplateText.Test1.Incorrect}}</p>
-            <p class="message incorrect_a">{{.TemplateText.Test1.Hint}}</p>
-          </section>
+
+        {{if index .Results 0}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 0}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Test1.Option1}}</u></em></p>
         </div>
+        {{else}}
+        <div>
+          <input type="radio" name="q1" id="q1a" value="{{.TemplateText.Test1.Option1}}"/>
+          <label for="q1a">{{.TemplateText.Test1.Option1}}</label>
+          <input type="radio" name="q1" id="q1b" value="{{.TemplateText.Test1.Option2}}"/>
+          <label for="q1b">{{.TemplateText.Test1.Option2}}</label>
+          <input type="radio" name="q1" id="q1c" value="{{.TemplateText.Test1.Option3}}"/>
+          <label for="q1c">{{.TemplateText.Test1.Option3}}</label>
+          <input type="radio" name="q1" id="q1d" value="{{.TemplateText.Test1.Option4}}"/>
+          <label for="q1d">{{.TemplateText.Test1.Option4}}</label>
+
+          <input type="submit" value="submit" />
+        </div>
+        {{end}}
+
       </fieldset>
     </form>
   </div>
@@ -97,25 +97,24 @@
       </div>
     </div>
 
-    <form>
+    <form class="quizz-form">
       <fieldset id="q2" class="quizz-fieldset">
         <legend>{{.TemplateText.Test2.Question}}</legend>
-        <div>
-          <input type="radio" name="q2" id="q2a" />
-          <label for="q2a">{{.TemplateText.Test2.Option1}}</label>
-          <input type="radio" name="q2" id="q2b" />
-          <label for="q2b">{{.TemplateText.Test2.Option2}}</label>
-          <section>
-            <div class="message correct">
-              <p>{{.TemplateText.Test2.Correct}}</p>
-              <img
-                src="/frontend/test2correct-img.png"
-                style="height: 200px; width: auto; float: left"
-              />
-            </div>
-            <p class="message incorrect">{{.TemplateText.Test2.Incorrect}}</p>
-          </section>
+
+        {{if index .Results 1}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 1}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Test2.Option1}}</u></em></p>
         </div>
+        {{else}}
+        <div>
+          <input type="radio" name="q2" id="q2a" value="{{.TemplateText.Test2.Option1}}"/>
+          <label for="q2a">{{.TemplateText.Test2.Option1}}</label>
+          <input type="radio" name="q2" id="q2b" value="{{.TemplateText.Test2.Option2}}"/>
+          <label for="q2b">{{.TemplateText.Test2.Option2}}</label>
+          <input type="submit" value="submit" />
+        </div>
+        {{end}}
       </fieldset>
     </form>
   </div>
@@ -146,31 +145,25 @@
       />
     </div>
 
-    <form>
+    <form class="quizz-form">
       <fieldset id="q3" class="quizz-fieldset">
         <legend>{{.TemplateText.Test3.Question}}</legend>
+
+        {{if index .Results 2}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 2}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Test3.Option1}}</u></em></p>
+        </div>
+        {{else}}
         <div>
-          <input type="radio" name="q3" id="q3a" />
+          <input type="radio" name="q3" id="q3a" value="{{.TemplateText.Test3.Option1}}"/>
           <label for="q3a">{{.TemplateText.Test3.Option1}}</label>
-          <input type="radio" name="q3" id="q3b" />
+          <input type="radio" name="q3" id="q3b" value="{{.TemplateText.Test3.Option2}}"/>
           <label for="q3b">{{.TemplateText.Test3.Option2}}</label>
-          <section>
-            <div class="message correct">
-              <p>{{.TemplateText.Test3.Correct}}</p>
-              <img
-                src="/frontend/test3correct-img.png"
-                style="
-                  height: 200px;
-                  width: auto;
-                  float: left;
-                  max-width: 250px;
-                "
-              />
-            </div>
-            <p class="message incorrect">{{.TemplateText.Test3.Incorrect}}</p>
-          </section>
+          <input type="submit" value="submit" />
         </div>
       </fieldset>
+      {{end}}
     </form>
   </div>
 
@@ -191,30 +184,24 @@
       </div>
     </div>
 
-    <form>
+    <form class="quizz-form">
       <fieldset id="q4" class="quizz-fieldset">
         <legend>{{.TemplateText.Test4.Question}}</legend>
-        <div>
-          <input type="radio" name="q4" id="q4a" />
-          <label for="q4a">{{.TemplateText.Test4.Option1}}</label>
-          <input type="radio" name="q4" id="q4b" />
-          <label for="q4b">{{.TemplateText.Test4.Option2}}</label>
-          <section>
-            <div class="message correct">
-              <p>{{.TemplateText.Test4.Correct}}</p>
-              <img
-                src="/frontend/test4correct-img.png"
-                style="
-                  height: 200px;
-                  width: auto;
-                  float: left;
-                  max-width: 300px;
-                "
-              />
-            </div>
-            <p class="message incorrect">{{.TemplateText.Test4.Incorrect}}</p>
-          </section>
+
+        {{if index .Results 3}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 3}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Test4.Option1}}</u></em></p>
         </div>
+        {{else}}
+        <div>
+          <input type="radio" name="q4" id="q4a" value="{{.TemplateText.Test4.Option1}}"/>
+          <label for="q4a">{{.TemplateText.Test4.Option1}}</label>
+          <input type="radio" name="q4" id="q4b" value="{{.TemplateText.Test4.Option2}}"/>
+          <label for="q4b">{{.TemplateText.Test4.Option2}}</label>
+          <input type="submit" value="submit" />
+        </div>
+        {{end}}
       </fieldset>
     </form>
   </div>
@@ -251,34 +238,32 @@
       />
     </div>
 
-    <form>
+    <form class="quizz-form">
       <fieldset id="q5" class="quizz-fieldset">
         <legend style="font-size: 130%">
           {{.TemplateText.Test5.Question}}
         </legend>
-        <div>
-          <input type="radio" name="q5" id="q5a" />
-          <label for="q5a">{{.TemplateText.Test5.Option1}}</label>
-          <input type="radio" name="q5" id="q5b" />
-          <label for="q5b">{{.TemplateText.Test5.Option2}}</label>
-          <input type="radio" name="q5" id="q5c" />
-          <label for="q5c">{{.TemplateText.Test5.Option3}}</label>
-          <input type="radio" name="q5" id="q5d" />
-          <label for="q5d">{{.TemplateText.Test5.Option4}}</label>
-          <input type="radio" name="q5" id="q5e" />
-          <label for="q5e">{{.TemplateText.Test5.Option5}}</label>
-          <section>
-            <div class="message correct">
-              <p>{{.TemplateText.Test5.Correct}}</p>
-              <img
-                src="/frontend/test5correct-img.png"
-                style="float: left; min-width: 200px"
-              />
-            </div>
-            <p class="message incorrect">{{.TemplateText.Test5.Incorrect}}</p>
-            <p class="message incorrect_a">{{.TemplateText.Test5.Hint}}</p>
-          </section>
+
+        {{if index .Results 4}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 4}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Test5.Option3}}</u></em></p>
         </div>
+        {{else}}
+        <div>
+          <input type="radio" name="q5" id="q5a" value="{{.TemplateText.Test5.Option1}}"/>
+          <label for="q5a">{{.TemplateText.Test5.Option1}}</label>
+          <input type="radio" name="q5" id="q5b" value="{{.TemplateText.Test5.Option2}}"/>
+          <label for="q5b">{{.TemplateText.Test5.Option2}}</label>
+          <input type="radio" name="q5" id="q5c" value="{{.TemplateText.Test5.Option3}}"/>
+          <label for="q5c">{{.TemplateText.Test5.Option3}}</label>
+          <input type="radio" name="q5" id="q5d" value="{{.TemplateText.Test5.Option4}}"/>
+          <label for="q5d">{{.TemplateText.Test5.Option4}}</label>
+          <input type="radio" name="q5" id="q5e" value="{{.TemplateText.Test5.Option5}}"/>
+          <label for="q5e">{{.TemplateText.Test5.Option5}}</label>
+          <input type="submit" value="submit" />
+        </div>
+        {{end}}
       </fieldset>
     </form>
   </div>
@@ -291,28 +276,33 @@
   <div class="tests-main-block" id="bacteria-main-block">
     <img id="bacteria-img" src="/frontend/bacteria.png" alt="" />
 
-    <fieldset id="q6" class="quizz-fieldset">
-      <legend style="font-size: 130%">
-        {{.TemplateText.Bacteria.Question}}
-      </legend>
-      <div>
-        <input type="radio" name="q6" id="q6a" />
-        <label for="q6a">{{.TemplateText.Bacteria.Option1}}</label>
-        <input type="radio" name="q6" id="q6b" />
-        <label for="q6b">{{.TemplateText.Bacteria.Option2}}</label>
-        <input type="radio" name="q6" id="q6c" />
-        <label for="q6c">{{.TemplateText.Bacteria.Option3}}</label>
-        <input type="radio" name="q6" id="q6d" />
-        <label for="q6d">{{.TemplateText.Bacteria.Option4}}</label>
-        <section>
-          <div class="message correct">
-            <p>{{.TemplateText.Bacteria.Correct}}</p>
-          </div>
-          <p class="message incorrect">{{.TemplateText.Bacteria.Incorrect}}</p>
-          <p class="message incorrect_a">{{.TemplateText.Bacteria.Hint}}</p>
-        </section>
-      </div>
-    </fieldset>
+    <form class="quizz-form">
+      <fieldset id="q6" class="quizz-fieldset">
+        <legend style="font-size: 130%">
+          {{.TemplateText.Bacteria.Question}}
+        </legend>
+
+        {{if index .Results 5}}
+        <div class="correct-answer">
+          <p>{{.TemplateText.Tests.Chosen}}<em><u>{{index .Results 5}}</u></em></p>
+          <p>{{.TemplateText.Tests.Correct}}<em><u>{{.TemplateText.Bacteria.Option3}}</u></em></p>
+        </div>
+        {{else}}
+        <div>
+          <input type="radio" name="q6" id="q6a" value="{{.TemplateText.Bacteria.Option1}}"/>
+          <label for="q6a">{{.TemplateText.Bacteria.Option1}}</label>
+          <input type="radio" name="q6" id="q6b" value="{{.TemplateText.Bacteria.Option2}}"/>
+          <label for="q6b">{{.TemplateText.Bacteria.Option2}}</label>
+          <input type="radio" name="q6" id="q6c" value="{{.TemplateText.Bacteria.Option3}}"/>
+          <label for="q6c">{{.TemplateText.Bacteria.Option3}}</label>
+          <input type="radio" name="q6" id="q6d" value="{{.TemplateText.Bacteria.Option4}}"/>
+          <label for="q6d">{{.TemplateText.Bacteria.Option4}}</label>
+          <input type="submit" value="submit" />
+        </div>
+        {{end}}
+      </fieldset>
+    </form>
+    
   </div>
 </div>
 {{end}} {{define "language_buttons"}}

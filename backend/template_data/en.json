@@ -10,7 +10,9 @@
   },
   "Tests": {
     "Text1": "Well done ! Cultivation is the process of propagating organisms by providing the proper environmental conditions.",
-    "Text2": "And now you can start testing!"
+    "Text2": "And now you can start testing!",
+    "Correct": "Correct answer is - ",
+    "Chosen": "Your answer is - "
   },
   "Test1": {
     "TestName": "Motility test",
@@ -21,16 +23,14 @@
     "Option2": "F-pili",
     "Option3": "Capsule",
     "Option4": "Ribosome ",
-    "Correct": "Correct",
-    "Incorrect": "Incorrect",
     "Hint": "The right answer is Flagella"
   },
   "Test2": {
     "TestName": "Gram staining test ",
     "Text1": "Gram test stains bacteria in two colors red and pink or blue and purple. A blue or purple color means that the bacteria is gram positive. Red or pink means that the bacteria is gram negative. The gram positive bacteria has a thick cell wall made up of peptidoglycan. The gram negative bacteria has a thin cell wall. Gram test is observed under a microscope. The shape of the bacteria can also be determined due to staining. Usually bacteria are classified into 4 groups according to their shape: round, rod-shaped, comma-shaped, spiral.",
     "Question": "Is it true that round bacteria are cocci, rod-shaped bacteria are bacillus, comma-shaped bacteria are vibrions and spiral bacteria are spirilla?",
-    "Option1": "False",
-    "Option2": "True",
+    "Option1": "True",
+    "Option2": "False",
     "Correct": "Correct",
     "Incorrect": "Incorrect"
   },

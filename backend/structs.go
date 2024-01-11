@@ -19,5 +19,6 @@ type Application struct {
 type TemplateDataStruct struct {
 	Fname        string
 	Lname        string
+	Results      [6]string
 	TemplateText map[string]map[string]string
 }

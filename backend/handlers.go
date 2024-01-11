@@ -1,8 +1,10 @@
 package backend
 
 import (
+	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -65,6 +67,16 @@ func (app *Application) tests(w http.ResponseWriter, r *http.Request) {
 		app.ClientError(w, http.StatusMethodNotAllowed)
 		return
 	}
+
+	if len(app.TemplateData.Fname) > 0 && len(app.TemplateData.Lname) > 0 {
+		for i := 0; i < 6; i++ {
+			if len(app.TemplateData.Results[i]) == 0 {
+				app.TemplateData.Results[i] = r.FormValue("q" + strconv.Itoa(i+1))
+			}
+		}
+	}
+
+	fmt.Println(app.TemplateData.Results)
 
 	app.Render(w, r, "tests.page.html")
 }
