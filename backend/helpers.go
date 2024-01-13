@@ -1,6 +1,8 @@
 package backend
 
 import (
+	"crypto/rand"
+	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -98,7 +100,7 @@ func (app *Application) ParseTemplateData(dir string) error {
 
 // This function finds an html template in cache and executes it.
 // Enter filename without the html extension as in "base.layout.html" to just "base.layout"
-func (app *Application) Render(w http.ResponseWriter, r *http.Request, name string) {
+func (app *Application) Render(w http.ResponseWriter, r *http.Request, name string, myInstance *TemplateDataStruct) {
 	tmpl, ok := app.TemplateCache[name]
 	if !ok {
 		app.ServerError(w, fmt.Errorf("the %s page doesn't exist", name))
@@ -109,19 +111,19 @@ func (app *Application) Render(w http.ResponseWriter, r *http.Request, name stri
 	var err error
 
 	switch {
-	case split[2] == "kz":
-		app.TemplateData.TemplateText = app.TemplateTextKz
-	case split[2] == "ru":
-		app.TemplateData.TemplateText = app.TemplateTextRu
-	case split[2] == "en":
-		app.TemplateData.TemplateText = app.TemplateTextEn
+	case split[3] == "kz":
+		myInstance.TemplateText = app.TemplateTextKz
+	case split[3] == "ru":
+		myInstance.TemplateText = app.TemplateTextRu
+	case split[3] == "en":
+		myInstance.TemplateText = app.TemplateTextEn
 	default:
-		err = errors.New(split[0] + "/" + split[1] + "/" + split[2] + " - requested language is not found")
+		err = errors.New(split[0] + "/" + split[1] + "/" + split[3] + " - requested language is not found")
 		app.ServerError(w, err)
 		return
 	}
 
-	err = tmpl.Execute(w, app.TemplateData)
+	err = tmpl.Execute(w, myInstance)
 
 	if err != nil {
 		app.ServerError(w, err)
@@ -142,4 +144,15 @@ func (app *Application) ServerError(w http.ResponseWriter, err error) {
 	app.Error_log.Output(2, trace)
 
 	http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+}
+
+func (app *Application) GenerateRandomString(length int, w http.ResponseWriter) string {
+	b := make([]byte, length)
+	_, err := rand.Read(b)
+	if err != nil {
+		app.ServerError(w, err)
+	}
+
+	res := base64.StdEncoding.EncodeToString(b)
+	return res[:length]
 }

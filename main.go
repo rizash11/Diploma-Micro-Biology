@@ -9,16 +9,19 @@ import (
 	"path/filepath"
 )
 
+var Srv *http.Server
+
 func main() {
 
 	errorLog := log.New(os.Stderr, "ERROR: \t", log.Ldate|log.Ltime|log.Lshortfile)
 	infoLog := log.New(os.Stdout, "INFO \t", log.Ldate|log.Ltime)
-	TemplateData := backend.TemplateDataStruct{}
+	// TemplateData := backend.TemplateDataStruct{}
 
 	app := backend.Application{
 		Info_log:     infoLog,
 		Error_log:    errorLog,
-		TemplateData: &TemplateData,
+		ReqInstances: map[string]*backend.TemplateDataStruct{},
+		// TemplateData: &TemplateData,
 	}
 
 	// Parsing HTML templates and storing them in a cache to be executed later
@@ -41,12 +44,17 @@ func main() {
 		app.Info_log.Printf("defaulting to port %s", port)
 	}
 
-	srv := &http.Server{
+	app.Routes()
+	Srv = &http.Server{
 		Addr:    ":" + port,
-		Handler: app.Routes(),
+		Handler: app.SrvMux,
 	}
 
 	app.Info_log.Println("Starting a server at http://localhost:" + port)
-	app.Error_log.Fatalln(srv.ListenAndServe())
+	app.Error_log.Fatalln(Srv.ListenAndServe())
+
+}
+
+func HandleRequest() {
 
 }

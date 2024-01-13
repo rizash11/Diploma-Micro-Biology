@@ -5,13 +5,13 @@
 <section id="name-background">
   {{$lang := .TemplateText.Lang.Value}}
   {{if (eq $lang "kz")}}
-  <form id="name-window" action="/cultivation/kz">
+  <form id="name-window" action="{{.Links.CultivationKz}}">
   {{else if (eq $lang "ru")}}
-  <form id="name-window" action="/cultivation/ru">
+  <form id="name-window" action="{{.Links.CultivationRu}}">
   {{else if (eq $lang "en")}}
-  <form id="name-window" action="/cultivation/en">
+  <form id="name-window" action="{{.Links.CultivationEn}}">
   {{else}}
-  <form id="name-window" action="/cultivation/kz">
+  <form id="name-window" action="{{.Links.CultivationKz}}">
   {{end}}
     <h3>Blank</h3>
 
@@ -47,13 +47,13 @@
 
     {{$lang := .TemplateText.Lang.Value}}
     {{if (eq $lang "kz")}}
-      <a href="/tests/kz" target="_self">
+      <a href="{{.Links.TestsKz}}" target="_self">
     {{else if (eq $lang "ru")}}
-      <a href="/tests/ru" target="_self">
+      <a href="{{.Links.TestsRu}}" target="_self">
     {{else if (eq $lang "en")}}
-      <a href="/tests/en" target="_self">
+      <a href="{{.Links.TestsEn}}" target="_self">
     {{else}}
-      <a href="/tests/kz" target="_self">
+      <a href="{{.Links.TestsKz}}" target="_self">
     {{end}}
       <button type="button" class="cltn-button">{{.TemplateText.Cultivation.Button}}</button>
     </a>
@@ -66,21 +66,21 @@
 <fieldset id="lang_buttons">
   <label>
     <input type="radio" id="lang_cltn_kz" name="button" class="lang_button"/>
-    <a href="/cultivation/kz" target="_self">
+    <a href="{{.Links.CultivationKz}}" target="_self">
       kz
     </a>
   </label>
 
   <label>
     <input type="radio" id="lang_cltn_ru" name="button" class="lang_button"/>
-    <a href="/cultivation/ru" target="_self">
+    <a href="{{.Links.CultivationRu}}" target="_self">
       ru
     </a>
   </label>
 
   <label>
     <input type="radio" id="lang_cltn_en" name="button" class="lang_button"/>
-    <a href="/cultivation/en" target="_self">
+    <a href="{{.Links.CultivationEn}}" target="_self">
       en
     </a>
   </label>
