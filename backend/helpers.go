@@ -109,13 +109,17 @@ func (app *Application) Render(w http.ResponseWriter, r *http.Request, name stri
 
 	split := strings.Split(r.URL.Path, string(os.PathSeparator))
 	var err error
+	i := 3
 
 	switch {
-	case split[3] == "kz":
+	case myInstance.Key == "results":
+		i = 2
+		fallthrough
+	case split[i] == "kz":
 		myInstance.TemplateText = app.TemplateTextKz
-	case split[3] == "ru":
+	case split[i] == "ru":
 		myInstance.TemplateText = app.TemplateTextRu
-	case split[3] == "en":
+	case split[i] == "en":
 		myInstance.TemplateText = app.TemplateTextEn
 	default:
 		err = errors.New(split[0] + "/" + split[1] + "/" + split[3] + " - requested language is not found")

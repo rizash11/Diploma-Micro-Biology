@@ -26,6 +26,7 @@ type TemplateDataStruct struct {
 	Results      [6]string
 	TemplateText map[string]map[string]string
 	Links        map[string]string
+	ResultsTxt   string
 }
 
 func (reqInstance *TemplateDataStruct) ConcStrings(s1, s2 string) string {

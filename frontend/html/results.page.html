@@ -1,0 +1,39 @@
+{{template "base" .}}
+<!--  -->
+{{define "body"}}
+
+<form class="results-body">
+  <textarea name="results-window">
+    {{.ResultsTxt}}
+  </textarea>
+
+  <div>
+    <input type="checkbox" name="savable" value="true" />
+    <input type="submit" value="save" />
+  </div>
+  <p>
+    To save any changes to the results, check the checkbox first, and then click
+    save
+  </p>
+</form>
+{{end}}
+
+<!--  -->
+{{define "language_buttons"}}
+<fieldset id="lang_buttons">
+  <label>
+    <input type="radio" id="lang_cltn_kz" name="button" class="lang_button" />
+    <a href="/results/kz" target="_self"> kz </a>
+  </label>
+
+  <label>
+    <input type="radio" id="lang_cltn_ru" name="button" class="lang_button" />
+    <a href="/results/ru" target="_self"> ru </a>
+  </label>
+
+  <label>
+    <input type="radio" id="lang_cltn_en" name="button" class="lang_button" />
+    <a href="/results/en" target="_self"> en </a>
+  </label>
+</fieldset>
+{{end}}

@@ -1,6 +1,7 @@
 @import "tests.css";
 @import "cultivation.css";
 @import "quizz.css";
+@import "results.css";
 
 .header {
   position: sticky;

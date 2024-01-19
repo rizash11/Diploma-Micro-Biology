@@ -1,0 +1,11 @@
+.results-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.results-body textarea {
+  width: 90vw;
+  min-height: 90vh;
+}
