@@ -29,6 +29,9 @@ type TemplateDataStruct struct {
 	ResultsTxt   string
 }
 
-func (reqInstance *TemplateDataStruct) ConcStrings(s1, s2 string) string {
-	return s1 + s2
+// Pulling out an answer string from a map (ex: TemplateText[Test1][Option1]). Function is called from tests html page.
+func (reqInstance *TemplateDataStruct) PullResult(TestNumInt int, TestNumStr string) (result string) {
+	result = reqInstance.TemplateText["Test"+TestNumStr]["Option"+reqInstance.Results[TestNumInt-1]]
+
+	return result
 }

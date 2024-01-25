@@ -35,7 +35,7 @@ fieldset label::after {
 }
 
 fieldset .correct-answer {
-  background-color: lightgray;
+  background-color: lightcoral;
   border-radius: 1vh;
   color: black;
 }
