@@ -23,7 +23,6 @@ func (app *Application) Routes() {
 func (app *Application) home(w http.ResponseWriter, r *http.Request) {
 	switch {
 	case r.URL.Path != "/":
-		fmt.Println("Not found")
 		app.NotFound(w)
 		return
 

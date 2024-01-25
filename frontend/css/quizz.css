@@ -34,12 +34,19 @@ fieldset label::after {
   line-height: 2;
 }
 
-fieldset .correct-answer {
+fieldset .user-answer {
   background-color: lightcoral;
   border-radius: 1vh;
   color: black;
 }
 
-fieldset .correct-answer p {
+fieldset .user-answer p {
   padding-left: 2vh;
+}
+
+fieldset .correct-answer {
+  color: #02050f;
+  padding: 2vh;
+  background-color: antiquewhite;
+  border-radius: 1vh;
 }
