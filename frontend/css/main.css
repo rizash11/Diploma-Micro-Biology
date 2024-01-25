@@ -2,6 +2,7 @@
 @import "cultivation.css";
 @import "quizz.css";
 @import "results.css";
+@import "cultivate_button.css";
 
 .header {
   position: sticky;
