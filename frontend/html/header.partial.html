@@ -1,6 +1,9 @@
 {{define "header"}}
 <div class="header">
-  <h2>{{.TemplateText.Header.Text1}}</h2>
+  <div>
+    <h2 class="no-bottom-space">{{.TemplateText.Header.Text1}}</h2>
+    <h3 class="no-top-space">{{.TemplateText.Header.Text2}}</h3>
+  </div>
   {{template "language_buttons" .}}
 </div>
 {{end}}

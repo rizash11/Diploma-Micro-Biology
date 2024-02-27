@@ -130,3 +130,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.no-bottom-space {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.no-top-space {
+  margin-top: 0;
+  padding-top: 0;
+}

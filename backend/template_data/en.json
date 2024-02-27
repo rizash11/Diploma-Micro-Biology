@@ -1,6 +1,9 @@
 {
   "Lang": { "Value": "en" },
-  "Header": { "Text1": "Microbiologist" },
+  "Header": {
+    "Text1": "Microbiologist",
+    "Text2": "Topic of the lesson: Gastrointestinal diseases and food hygiene"
+  },
   "Footer": { "Text1": "Muratbek N." },
   "NameStore": {
     "Text1": "Enter your name please:",
